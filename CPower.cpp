@@ -134,14 +134,14 @@ void Power::Dump() {
 	cout << endl;
 }
 
-double Power::GetValue(double x,const Power& p){
+double Power::GetValue(double in){
     double result;
-    double pow=x;
+    double x=in;
     int i;
-    for(i=0;i<p.e_coeff;i++)
+    for(i=1;i<e_coeff;i++)
     {
-        pow=pow*x;
+        x=x*in;
     }
-    result=pow*p.k_coeff;
+    result=x*k_coeff;
 	return result;
 }

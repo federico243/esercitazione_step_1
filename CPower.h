@@ -41,7 +41,7 @@ public:
     void WarningMessage(const char *string);
     void Dump();
     /// @}
-
-    double GetValue(double x, const Power &p);
+    
+    double GetValue(double in);
 };
 #endif
