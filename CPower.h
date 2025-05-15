@@ -12,7 +12,7 @@
 #include "CFunction.h"
 
 class Power:public Function{
-protected:
+private:
     double k_coeff;
     double e_coeff;
 
