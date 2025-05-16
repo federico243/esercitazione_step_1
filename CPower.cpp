@@ -7,7 +7,7 @@
 
 /// @brief defaul constructor
 Power::Power(){
-    e_coeff=-00000.1;
+    e_coeff=-0.00001;
     k_coeff=0;
 }
 
@@ -69,7 +69,7 @@ bool Power::operator==(const Power& p){
 */
 void Power::SetPower(double new_k_coeff, double new_e_coeff)
 {
-    if(e_coeff!=-00000.1)
+    if(e_coeff!=-0.00001)
     {
         Reset();
     }
@@ -81,7 +81,7 @@ void Power::SetPower(double new_k_coeff, double new_e_coeff)
  * @brief reset the power
  */
 void Power::Reset(){
-    e_coeff=-00000.1;
+    e_coeff=-0.00001;
     k_coeff=0;
 }
 
@@ -90,7 +90,7 @@ void Power::Reset(){
  */ 
 void Power::Dump() {
 
-    if (e_coeff == -00000.1) {
+    if (e_coeff == -0.00001) {
 		cout << "Uninitialized Power" << endl;
 		return;
 	}
@@ -108,6 +108,11 @@ void Power::Dump() {
 double Power::GetValue(double in){
     double result;
     double x=in;
+    if(x==0&&e_coeff==0)
+    {
+        cout<<" Zero to the zero is an indeterminate form "<<endl;
+        exit(-1);
+    }
     int i;
     for(i=1;i<e_coeff;i++)
     {
